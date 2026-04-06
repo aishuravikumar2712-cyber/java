@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tamilnadu Tourism</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    padding-top:70px;
+}
+
+/* NAVBAR */
+nav {
+    background-color: purple;
+    width100%;
+    padding: 20px 0;
+    text-align: center;
+    position:fixed;
+    z-index:10000;
+    top:0;
+    left:0;
+    right:0;
+    display:block;
+}
+
+nav a {
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    display:inline-block;
+}
+
+nav a:hover {
+    color: yellow;
+}
+
+/* HERO / HEADER */
+.hero {
+    background: linear-gradient(to right, purple);
+    color:black;
+    text-align: center;
+    padding: 60px 20px;
+    width:100%
+}
+
+.hero h1 {
+    font-size: 40px;
+}
+
+.hero p {
+    font-size: 20px;
+}
+
+/* SECTION */
+.section {
+    padding: 30px;
+    text-align: center;
+}
+
+/* WHY CHOOSE US */
+.check-list {
+    max-width: 500px;
+    margin: 0;
+    text-align: left;
+    padding top:80px;
+}
+
+.check-list p::before {
+    content: "✔ ";
+    color: green;
+}
+
+/* VIDEO */
+.video-container {
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px gray;
+}
+
+/* LOGIN FORM */
+.login-box {
+    width: 350px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px gray;
+}
+
+.login-box h2 {
+    text-align: center;
+    color: purple;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 10px;
+    background-color: purple;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.login-box button:hover {
+    background-color: darkviolet;
+}
+
+/* FOOTER */
+footer {
+    background-color: purple;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <a href="index.html">Home</a>
+    <a href="place.html">Places</a>
+    <a href="hotel.html">Hotels</a>
+    <a href="food.html">feast</a>
+</nav>
+
+<!-- HERO / HEADER -->
+<div class="hero">
+    <h1>Explore Tamilnadu</h1>
+    <p>Discover Culture, Temples, Beaches & Hill Stations</p>
+</div>
+
+<!-- DESCRIPTION -->
+<div class="section">
+    <h2>About Tamilnadu Tourism</h2>
+    <p>
+        Tamilnadu is a land of ancient temples, beautiful beaches, 
+        peaceful hill stations, and rich cultural heritage.
+        Plan your perfect trip with us!
+    </p>
+</div>
+
+<!-- WHY CHOOSE US -->
+<div class="section">
+    <h2>Why Choose Us?</h2>
+    <div class="check-list">
+        <p>Affordable hotel bookings</p>
+        <p>Best tourist guidance</p>
+        <p>Easy travel planning</p>
+        <p>Friendly support during your trip</p>
+    </div>
+</div>
+
+<!-- VIDEO SECTION -->
+<div class="video-container">
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;margin:40px 0;">
+    <h2>Watch Tamilnadu</h2>
+    <iframe width="1013" height="570" src="https://www.youtube.com/embed/vFQyLgCiWE8" title="Explore the Rich Heritage and Natural Beauty | Places to visit &amp; Things to do | Tamil Nadu Tourism" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+</div>
+<!-- LOGIN FORM -->
+<div class="section">
+    <div class="login-box">
+        <h2>Login / Register</h2>
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email">
+        <input type="tel" placeholder="Phone Number">
+        <input type="password" placeholder="Password">
+        <button>Submit</button>
+    </div>
+</div>
+<script>
+    function validateLogin() {
+        // Get the values the user typed
+        const email = document.getElementById("userEmail").value;
+        const pass = document.getElementById("userPass").value;
+
+        // Set your "correct" credentials here
+        const correctEmail = "admin@tourism.com";
+        const correctPass = "Tamil123";
+
+        // First, check the email
+        if (email !== correctEmail) {
+            alert("Email not recognized. Please check your email address.");
+            return false; // Stops the form
+        }
+
+        // Second, check the password
+        if (pass !== correctPass) {
+            alert("Incorrect password! Please try again.");
+            return false; // Stops the form
+        }
+
+        // If both are correct
+        alert("Login Successful! Redirecting to your dashboard...");
+        return true; 
+    }
+</script>
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2026 Tamilnadu Tourism | All Rights Reserved</p>
+</footer>
+<script>
+document.querySelector(".login-box button").addEventListener("click", function() {
+    let inputs = document.querySelectorAll(".login-box input");
+    
+    let name = inputs[0].value.trim();
+    let email = inputs[1].value.trim();
+    let phone = inputs[2].value.trim();
+    let password = inputs[3].value.trim();
+
+    // Sample correct details (you can change these)
+    let correctName = "admin";
+    let correctEmail = "admin@gmail.com";
+    let correctPhone = "1234567890";
+    let correctPassword = "1234";
+
+    if (name === "" || email === "" || phone === "" || password === "") {
+        alert("Please fill all the fields!");
+    } 
+    else if (
+        name !== correctName ||
+        email !== correctEmail ||
+        phone !== correctPhone ||
+        password !== correctPassword
+    ) {
+        alert("Invalid Login Details!");
+    } 
+    else {
+        alert("Login Successful!");
+    }
+});
+</script>
+
+
+</body>
+</html>
